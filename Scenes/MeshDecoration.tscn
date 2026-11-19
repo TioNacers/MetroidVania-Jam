@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://wdoe5cx8y8l8"]
+
+[ext_resource type="ArrayMesh" uid="uid://cfvpqag58k43u" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/box_stacked.obj" id="1_rjc72"]
+[ext_resource type="ArrayMesh" uid="uid://cmy303n5xib4e" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/candle.obj" id="2_kn8sc"]
+[ext_resource type="ArrayMesh" uid="uid://ccqc0ke4n7vrp" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/candle_melted.obj" id="3_mqi7k"]
+[ext_resource type="ArrayMesh" uid="uid://cvuugwixqbc0h" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/candle_thin.obj" id="4_h7hvu"]
+[ext_resource type="ArrayMesh" uid="uid://ch8egxum8dv4l" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/candle_triple.obj" id="5_3scgm"]
+[ext_resource type="ArrayMesh" uid="uid://b4dkbuq20e62v" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/crates_stacked.obj" id="6_85lkt"]
+[ext_resource type="ArrayMesh" uid="uid://q868tx0skctb" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/keg.obj" id="7_ylqf4"]
+[ext_resource type="ArrayMesh" uid="uid://cntfb36ro4f4m" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/keg_decorated.obj" id="8_ro0oo"]
+[ext_resource type="ArrayMesh" uid="uid://cf8lht5wevnkq" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/pillar.obj" id="9_gfycy"]
+[ext_resource type="ArrayMesh" uid="uid://bq3o2dvw5lmbd" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/pillar_decorated.obj" id="10_2iiiy"]
+[ext_resource type="ArrayMesh" uid="uid://b4mptbr42wjh0" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/table_long_broken.obj" id="11_3wxxn"]
+[ext_resource type="ArrayMesh" uid="uid://beya4x8pi1wnt" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/table_long_decorated_A.obj" id="12_5oefn"]
+[ext_resource type="ArrayMesh" uid="uid://brsbwjhi1uqlx" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/table_long_decorated_C.obj" id="13_25wky"]
+[ext_resource type="ArrayMesh" uid="uid://cf3r40dfs4pmb" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/table_long_tablecloth.obj" id="14_3hw3a"]
+[ext_resource type="ArrayMesh" uid="uid://djv1sdv08efoa" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/table_long_tablecloth_decorated_A.obj" id="15_6unii"]
+[ext_resource type="ArrayMesh" uid="uid://d1m47k6d58atc" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/table_medium_broken.obj" id="16_xcqrq"]
+[ext_resource type="ArrayMesh" uid="uid://cu1xfdv731w0a" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/table_small_decorated_A.obj" id="17_urr3l"]
+[ext_resource type="ArrayMesh" uid="uid://5b8adiqp2b01" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/torch.obj" id="18_prpiw"]
+[ext_resource type="ArrayMesh" uid="uid://cm2aghnbtiv5u" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/torch_mounted.obj" id="19_wne1v"]
+[ext_resource type="ArrayMesh" uid="uid://ocqviqnpnqd1" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/barrier.obj" id="20_6w8nv"]
+[ext_resource type="ArrayMesh" uid="uid://d8li4fbqxvv1" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/barrier_column.obj" id="21_7efeu"]
+[ext_resource type="ArrayMesh" uid="uid://bqvtgwhkimlou" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/barrier_colum_half.obj" id="22_cn5n6"]
+[ext_resource type="ArrayMesh" uid="uid://y7uun1hgd2kh" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/barrier_corner.obj" id="23_g6iv2"]
+[ext_resource type="ArrayMesh" uid="uid://doyssd3dvrr4j" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/barrier_half.obj" id="24_eixy1"]
+[ext_resource type="ArrayMesh" uid="uid://7bby8wvwkyil" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/bed_decorated.obj" id="25_kyaub"]
+[ext_resource type="ArrayMesh" uid="uid://da5m22uq8iwow" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/bed_floor.obj" id="26_pelro"]
+[ext_resource type="ArrayMesh" uid="uid://c7br1n6xbmffa" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/bed_frame.obj" id="27_0b867"]
+[ext_resource type="ArrayMesh" uid="uid://iah1cxq78tj4" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/barrel_large.obj" id="28_geuhc"]
+[ext_resource type="ArrayMesh" uid="uid://cb28lcvectrpx" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/barrel_large_decorated.obj" id="29_hespp"]
+[ext_resource type="ArrayMesh" uid="uid://djn8ha87kghs6" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/barrel_small.obj" id="30_8an00"]
+[ext_resource type="ArrayMesh" uid="uid://ct6klbr46pcdk" path="res://Assets/KayKit_Dungeon_Pack_1.1_FREE/Assets/obj/barrel_small_stack.obj" id="31_3w8sf"]
+
+[node name="Node3D" type="Node3D" unique_id=1147622379]
+
+[node name="BoxStacked" type="MeshInstance3D" parent="." unique_id=207169234]
+mesh = ExtResource("1_rjc72")
+
+[node name="Candle" type="MeshInstance3D" parent="." unique_id=1023162850]
+mesh = ExtResource("2_kn8sc")
+
+[node name="CandleMelted" type="MeshInstance3D" parent="." unique_id=1296222310]
+mesh = ExtResource("3_mqi7k")
+
+[node name="CandleThin" type="MeshInstance3D" parent="." unique_id=1070457069]
+mesh = ExtResource("4_h7hvu")
+
+[node name="CandleTriple" type="MeshInstance3D" parent="." unique_id=1042730591]
+mesh = ExtResource("5_3scgm")
+
+[node name="CratesStacked" type="MeshInstance3D" parent="." unique_id=1331171953]
+mesh = ExtResource("6_85lkt")
+
+[node name="Keg" type="MeshInstance3D" parent="." unique_id=429264178]
+mesh = ExtResource("7_ylqf4")
+
+[node name="KegDecorated" type="MeshInstance3D" parent="." unique_id=1574811674]
+mesh = ExtResource("8_ro0oo")
+
+[node name="Pillar" type="MeshInstance3D" parent="." unique_id=319190662]
+mesh = ExtResource("9_gfycy")
+
+[node name="PillarDecorated" type="MeshInstance3D" parent="." unique_id=2103149384]
+mesh = ExtResource("10_2iiiy")
+
+[node name="TableLongBroken" type="MeshInstance3D" parent="." unique_id=1226177364]
+mesh = ExtResource("11_3wxxn")
+
+[node name="TableLongDecoratedA" type="MeshInstance3D" parent="." unique_id=1235846710]
+mesh = ExtResource("12_5oefn")
+
+[node name="TableLongDecoratedC" type="MeshInstance3D" parent="." unique_id=280609355]
+mesh = ExtResource("13_25wky")
+
+[node name="TableLongTablecloth" type="MeshInstance3D" parent="." unique_id=1990206703]
+mesh = ExtResource("14_3hw3a")
+
+[node name="TableLongTableclothDecoratedA" type="MeshInstance3D" parent="." unique_id=1913372778]
+mesh = ExtResource("15_6unii")
+
+[node name="TableMediumBroken" type="MeshInstance3D" parent="." unique_id=62803562]
+mesh = ExtResource("16_xcqrq")
+
+[node name="TableSmallDecoratedA" type="MeshInstance3D" parent="." unique_id=1269101491]
+mesh = ExtResource("17_urr3l")
+
+[node name="Torch" type="MeshInstance3D" parent="." unique_id=1415234498]
+mesh = ExtResource("18_prpiw")
+
+[node name="TorchMounted" type="MeshInstance3D" parent="." unique_id=638916083]
+mesh = ExtResource("19_wne1v")
+
+[node name="Barrier" type="MeshInstance3D" parent="." unique_id=2112393481]
+mesh = ExtResource("20_6w8nv")
+
+[node name="BarrierColumn" type="MeshInstance3D" parent="." unique_id=234424312]
+mesh = ExtResource("21_7efeu")
+
+[node name="BarrierColumHalf" type="MeshInstance3D" parent="." unique_id=911664067]
+mesh = ExtResource("22_cn5n6")
+
+[node name="BarrierCorner" type="MeshInstance3D" parent="." unique_id=1234980487]
+mesh = ExtResource("23_g6iv2")
+
+[node name="BarrierHalf" type="MeshInstance3D" parent="." unique_id=432688862]
+mesh = ExtResource("24_eixy1")
+
+[node name="BedDecorated" type="MeshInstance3D" parent="." unique_id=1549052122]
+mesh = ExtResource("25_kyaub")
+
+[node name="BedFloor" type="MeshInstance3D" parent="." unique_id=1374093719]
+mesh = ExtResource("26_pelro")
+
+[node name="BedFrame" type="MeshInstance3D" parent="." unique_id=1991192702]
+mesh = ExtResource("27_0b867")
+
+[node name="BarrelLarge" type="MeshInstance3D" parent="." unique_id=2059450348]
+mesh = ExtResource("28_geuhc")
+
+[node name="BarrelLargeDecorated" type="MeshInstance3D" parent="." unique_id=1013336290]
+mesh = ExtResource("29_hespp")
+
+[node name="BarrelSmall" type="MeshInstance3D" parent="." unique_id=603085426]
+mesh = ExtResource("30_8an00")
+
+[node name="BarrelSmallStack" type="MeshInstance3D" parent="." unique_id=1543872145]
+mesh = ExtResource("31_3w8sf")

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bs1t8mjaojpaf"]
+
+[ext_resource type="MeshLibrary" uid="uid://bpypp44wksonj" path="res://MeshLibrary/Floor.tres" id="1_go701"]
+[ext_resource type="MeshLibrary" uid="uid://cnqhboerab5dp" path="res://MeshLibrary/Wall.tres" id="2_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://ckfmdpdunxfvd" path="res://Scenes/Player.tscn" id="3_5a7ea"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5a7ea"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_8j60k"]
+sky_material = SubResource("ProceduralSkyMaterial_5a7ea")
+
+[sub_resource type="Environment" id="Environment_fo5ed"]
+background_mode = 2
+background_energy_multiplier = 1.47
+sky = SubResource("Sky_8j60k")
+sky_custom_fov = 101.3
+ambient_light_color = Color(0.08912772, 0.19502611, 0.4830698, 1)
+ambient_light_sky_contribution = 0.45
+glow_enabled = true
+
+[node name="World" type="Node3D" unique_id=1968633356]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1411211506]
+environment = SubResource("Environment_fo5ed")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=619122229]
+transform = Transform3D(-0.52939284, -0.6731564, -0.5163368, -0.78412765, 0.15590653, 0.60069716, -0.32386285, 0.72287875, -0.6103763, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Gridmaps" type="Node" parent="." unique_id=198820676]
+
+[node name="Floor" type="GridMap" parent="Gridmaps" unique_id=1230908316]
+mesh_library = ExtResource("1_go701")
+cell_size = Vector3(2, 1, 2)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(0, 0, 12, 1, 0, 13, 0, 3, 32, 1, 1, 33, 2, 1, 33, 2, 2, 33, 65535, 1, 33, 65535, 3, 33, 2, 0, 15, 1, 4, 33, 0, 4, 33, 12, 2, 18, 65535, 65535, 0, 0, 65535, 2, 1, 65535, 4, 2, 65535, 0, 3, 65535, 0, 4, 65535, 0, 65535, 0, 14, 3, 0, 4, 4, 0, 1441805, 5, 0, 1441794, 5, 65535, 1441796, 6, 65535, 1441796, 6, 0, 1441805, 7, 65535, 4, 8, 65535, 4, 7, 0, 13, 8, 0, 13, 9, 65535, 16, 10, 65535, 16, 11, 65535, 16, 12, 65535, 6, 13, 65535, 6, 9, 0, 12, 10, 0, 12, 11, 0, 12, 12, 0, 12, 13, 0, 12, 14, 65535, 6, 131086, 65535, 8, 131087, 65535, 8, 15, 65535, 5, 14, 0, 9, 15, 0, 9)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Wall" type="GridMap" parent="Gridmaps" unique_id=1249776905]
+mesh_library = ExtResource("2_5a7ea")
+cell_size = Vector3(1, 2, 1)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(0, 65534, 19, 4, 65534, 3, 8, 65534, 14, 12, 65534, 1, 16, 65534, 1, 20, 65534, 26, 24, 65534, 1, 28, 65534, 1, 32, 65534, 1, 131104, 65534, 3, 131100, 65534, 3, 131096, 65534, 3, 131092, 65534, 1, 131088, 65534, 1)
+}
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="Player" parent="." unique_id=1183880688 instance=ExtResource("3_5a7ea")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 7.3586545, 1.1212485, -0.55383396)
