@@ -1105,7 +1105,7 @@ animations = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_oqt55"]
 size = Vector3(0.13733673, 0.25708008, 0.0897522)
 
-[node name="Player" type="CharacterBody3D" unique_id=1183880688]
+[node name="Player" type="CharacterBody3D" unique_id=1183880688 groups=["player"]]
 script = ExtResource("1_ulo2v")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1397311630]

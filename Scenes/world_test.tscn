@@ -4,6 +4,7 @@
 [ext_resource type="MeshLibrary" uid="uid://cnqhboerab5dp" path="res://MeshLibrary/Wall.tres" id="2_jbex8"]
 [ext_resource type="MeshLibrary" uid="uid://h0ggpki4lkb" path="res://MeshLibrary/Decoration.tres" id="3_jbex8"]
 [ext_resource type="PackedScene" uid="uid://ckfmdpdunxfvd" path="res://Scenes/Player.tscn" id="3_ss6lx"]
+[ext_resource type="PackedScene" uid="uid://dj8el8vth182y" path="res://Scenes/test_mele_enemy.tscn" id="5_ss6lx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5a7ea"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -64,3 +65,6 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Player" parent="." unique_id=1183880688 instance=ExtResource("3_ss6lx")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 5.5, 0.5)
+
+[node name="test_mele_enemy" parent="." unique_id=1643211548 instance=ExtResource("5_ss6lx")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 2.553, 0.54362696, 0.5)

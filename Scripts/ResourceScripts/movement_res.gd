@@ -18,7 +18,7 @@ class_name MovementResource
 
 @export_category("Jumping")
 @export var can_jump: bool = true
-@export var jump_velocity: float = 6.5
+@export var jump_velocity: float = 5
 
 @export_category("Flying")
 @export var flying: bool = false
