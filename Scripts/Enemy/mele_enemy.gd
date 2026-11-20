@@ -10,7 +10,11 @@ var target: Node3D
 var attack_timer := 0.0
 var jump_timer := 0.0
 
+@export var weapon: Weapon
+var weapon_attack_name: String
+
 func _ready() -> void:
+	weapon_attack_name = weapon.get_attack_animation_name()
 	super()
 	sprite.animation_finished.connect(_on_animation_finished)
 
@@ -33,7 +37,7 @@ func _physics_process(delta: float) -> void:
 					attack_timer = attack_cooldown
 					movement_locked = true
 					velocity.x = 0.0
-					sprite.play("Punch_jab")
+					attack()
 		elif is_on_wall() and is_on_floor() and jump_timer <= 0.0:
 			jump()
 			jump_timer = jump_cooldown
@@ -44,6 +48,10 @@ func _physics_process(delta: float) -> void:
 
 	super(delta)
 	_update_animation()
+
+func attack():
+	weapon.attack()
+	sprite.play(weapon_attack_name)
 
 func _find_nearest_player() -> Node3D:
 	var best: Node3D = null
@@ -56,7 +64,7 @@ func _find_nearest_player() -> Node3D:
 	return best
 
 func _on_animation_finished() -> void:
-	if sprite.animation == "Punch_jab":
+	if sprite.animation == weapon_attack_name:
 		movement_locked = false
 
 func _update_animation() -> void:

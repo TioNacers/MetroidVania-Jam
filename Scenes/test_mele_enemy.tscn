@@ -2,10 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://dpot07anfioya" path="res://Assets/Player2D/Idle/Player Idle 48x48.png" id="1_f6c7f"]
 [ext_resource type="Script" uid="uid://cti2kkxsqfkpp" path="res://Scripts/Enemy/mele_enemy.gd" id="1_s3uy3"]
+[ext_resource type="Script" uid="uid://j053mwjussis" path="res://Scripts/Common/Weapon/weapon_common.gd" id="2_c6gr2"]
 [ext_resource type="Script" uid="uid://w8fbngfrq0yr" path="res://Scripts/ResourceScripts/movement_res.gd" id="2_e8kls"]
 [ext_resource type="Texture2D" uid="uid://yuha2pw68iq0" path="res://Assets/Player2D/Punch/Player Punch 64x64.png" id="2_s3uy3"]
 [ext_resource type="Texture2D" uid="uid://cqi7qpl50clq7" path="res://Assets/Player2D/Air Spin/player air spin 48x48.png" id="3_2ngub"]
 [ext_resource type="Texture2D" uid="uid://c0xqaa50sfaju" path="res://Assets/Player2D/Walk/PlayerWalk 48x48.png" id="3_e8kls"]
+[ext_resource type="Script" uid="uid://bl3skx87ktjw8" path="res://Scripts/ResourceScripts/weapon_res.gd" id="3_l5235"]
 [ext_resource type="Texture2D" uid="uid://bvrmi1pdml6dk" path="res://Assets/Player2D/Woodcutting/Woodcutting.png" id="4_ogo84"]
 [ext_resource type="Texture2D" uid="uid://mqqkqmu268vk" path="res://Assets/Player2D/Death/Player Death 64x64.png" id="5_c6gr2"]
 [ext_resource type="Texture2D" uid="uid://bwbwnvfg46wik" path="res://Assets/Player2D/Hurt-Damaged/Player Hurt 48x48.png" id="6_l5235"]
@@ -19,6 +21,16 @@
 [ext_resource type="Texture2D" uid="uid://dfg2wlogxtbda" path="res://Assets/Player2D/Shooting (running and aiming)/Player Running Aiming 48x48.png" id="16_2jpw6"]
 [ext_resource type="Texture2D" uid="uid://bisx1skn8rj5q" path="res://Assets/Player2D/Shooting (running and aiming)/Player Running Shooting 48x48.png" id="17_85igy"]
 [ext_resource type="Texture2D" uid="uid://cvp5uyla2ntvo" path="res://Assets/Player2D/Shooting (two-handed)/player shoot 2H 48x48.png" id="18_k0xgj"]
+
+[sub_resource type="Resource" id="Resource_ogo84"]
+script = ExtResource("3_l5235")
+weapon_name = "Katana"
+metadata/_custom_type_script = "uid://bl3skx87ktjw8"
+
+[sub_resource type="Resource" id="Resource_2ngub"]
+script = ExtResource("2_c6gr2")
+weapon_config = SubResource("Resource_ogo84")
+metadata/_custom_type_script = "uid://j053mwjussis"
 
 [sub_resource type="Resource" id="Resource_b5gms"]
 script = ExtResource("2_e8kls")
@@ -798,7 +810,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6id3a")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Katana_attack",
 "speed": 5.0
 }, {
@@ -1113,12 +1125,13 @@ size = Vector3(0.15588379, 0.30670166, 0.14575195)
 
 [node name="test_mele_enemy" type="CharacterBody3D" unique_id=1643211548]
 script = ExtResource("1_s3uy3")
+weapon = SubResource("Resource_2ngub")
 movement_settings = SubResource("Resource_b5gms")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1061558835]
 texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_8fidh")
-animation = &"Air Spin"
+animation = &"Katana_attack"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1527250700]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005554199, -0.00894165, -0.010620117)
