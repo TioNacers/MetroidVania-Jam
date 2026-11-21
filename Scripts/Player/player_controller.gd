@@ -2,14 +2,19 @@ extends Movable
 
 @onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
 
-@export var primary_weapon: Weapon
-@export var secondary_weapon: Weapon
-var weapon_attack_names: Array[String]
+@export var primary_weapon_preload: PackedScene
+@export var secondary_weapon_preload: PackedScene
+@export var hp: int = 5
+
+var primary_weapon: Weapon
+var secondary_weapon: Weapon
 
 func _ready() -> void:
 	super()
-	weapon_attack_names.append(primary_weapon.get_attack_animation_name())
-	weapon_attack_names.append(secondary_weapon.get_attack_animation_name())
+	if primary_weapon_preload != null:
+		equip_weapon(primary_weapon_preload, true)
+	if secondary_weapon_preload != null:
+		equip_weapon(secondary_weapon_preload, false)
 	sprite.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
@@ -27,10 +32,8 @@ func _physics_process(delta: float) -> void:
 				sprite.play("Roll_fast")
 		elif Input.is_action_just_pressed("shoot") and primary_weapon != null:
 			primary_weapon.attack()
-			_start_attack(primary_weapon.get_attack_animation_name())
 		elif Input.is_action_just_pressed("punch") and secondary_weapon != null:
 			secondary_weapon.attack()
-			_start_attack(secondary_weapon.get_attack_animation_name())
 
 	# 2. Gravity, run state and move_and_slide() happen once, in Movable
 	super(delta)
@@ -38,28 +41,34 @@ func _physics_process(delta: float) -> void:
 	# 3. Animation uses the post-move state
 	_update_animation()
 
-func equip_weapon(weapon: Weapon, primary: bool):
+func equip_weapon(scene: PackedScene, primary: bool) -> void:
+	var old := primary_weapon if primary else secondary_weapon
+	if old != null:
+		old.cancel_attack()
+		old.queue_free()
+
+	var weapon: Weapon = scene.instantiate()
+	add_child(weapon)
+	weapon.setup(self, sprite)
+
 	if primary:
-		weapon_attack_names.erase(primary_weapon.get_attack_animation_name())
 		primary_weapon = weapon
-		weapon_attack_names.append(weapon.get_attack_animation_name())
-	else :
-		weapon_attack_names.erase(secondary_weapon.get_attack_animation_name())
+	else:
 		secondary_weapon = weapon
-		weapon_attack_names.append(weapon.get_attack_animation_name())
 
+func take_damage(amount: int, _source: Node3D = null) -> void:
+	if hp <= 0:
+		return
+	hp -= amount
+	if hp <= 0:
+		die()
 
-func _start_attack(anim_name: String) -> void:
-	movement_locked = true
-	velocity.x = 0.0
-	sprite.play(anim_name)
+func die() -> void:
+	queue_free()
 
 func _on_animation_finished() -> void:
-
-	if (sprite.animation == "Roll_fast"):
+	if sprite.animation == "Roll_fast":
 		stop_rolling()
-	elif weapon_attack_names.has(sprite.animation):
-		movement_locked = false
 
 func _update_animation() -> void:
 	sprite.flip_h = facing < 0.0

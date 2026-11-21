@@ -22,3 +22,4 @@ class_name MovementResource
 
 @export_category("Flying")
 @export var flying: bool = false
+@export var acceleration: float = 35.0

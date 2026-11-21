@@ -3,20 +3,23 @@ extends Movable
 @export var attack_range := 1.5
 @export var attack_cooldown := 1.0
 @export var jump_cooldown := 0.6
+@export var weapon_preload: PackedScene
+@export var hp: int = 3
 
 @onready var sprite: AnimatedSprite3D = $AnimatedSprite3D
 
 var target: Node3D
 var attack_timer := 0.0
 var jump_timer := 0.0
-
-@export var weapon: Weapon
-var weapon_attack_name: String
+var weapon: Weapon
 
 func _ready() -> void:
-	weapon_attack_name = weapon.get_attack_animation_name()
 	super()
-	sprite.animation_finished.connect(_on_animation_finished)
+	add_to_group(&"enemy")
+	if weapon_preload != null:
+		weapon = weapon_preload.instantiate()
+		add_child(weapon)
+		weapon.setup(self, sprite)
 
 func _physics_process(delta: float) -> void:
 	attack_timer -= delta
@@ -33,11 +36,8 @@ func _physics_process(delta: float) -> void:
 			dir = 0.0
 			if not is_busy():
 				facing = signf(dx) if dx != 0.0 else facing
-				if attack_timer <= 0.0:
+				if attack_timer <= 0.0 and attack():
 					attack_timer = attack_cooldown
-					movement_locked = true
-					velocity.x = 0.0
-					attack()
 		elif is_on_wall() and is_on_floor() and jump_timer <= 0.0:
 			jump()
 			jump_timer = jump_cooldown
@@ -49,9 +49,18 @@ func _physics_process(delta: float) -> void:
 	super(delta)
 	_update_animation()
 
-func attack():
-	weapon.attack()
-	sprite.play(weapon_attack_name)
+func attack() -> bool:
+	return weapon != null and weapon.attack()
+
+func take_damage(amount: int, _source: Node3D = null) -> void:
+	if hp <= 0:
+		return
+	hp -= amount
+	if hp <= 0:
+		die()
+
+func die() -> void:
+	queue_free()
 
 func _find_nearest_player() -> Node3D:
 	var best: Node3D = null
@@ -62,10 +71,6 @@ func _find_nearest_player() -> Node3D:
 			best_dist = d
 			best = n
 	return best
-
-func _on_animation_finished() -> void:
-	if sprite.animation == weapon_attack_name:
-		movement_locked = false
 
 func _update_animation() -> void:
 	sprite.flip_h = facing < 0.0
