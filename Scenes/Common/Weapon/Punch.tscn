@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b1pcba3gf8657"]
+
+[ext_resource type="Script" uid="uid://b1jddxbc88fbb" path="res://Scripts/Common/Weapon/Mele/punch_jab.gd" id="1_g7fpq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xu1l7"]
+size = Vector3(0.22479248, 0.07324219, 0.07714844)
+
+[node name="Punch" type="Node3D" unique_id=205008102]
+script = ExtResource("1_g7fpq")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1382224161]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2003834070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.110687256, 0.010012649, 0)
+shape = SubResource("BoxShape3D_xu1l7")

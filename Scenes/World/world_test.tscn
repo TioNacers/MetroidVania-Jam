@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cgtlhpk0dx58w"]
 
-[ext_resource type="MeshLibrary" uid="uid://bpypp44wksonj" path="res://MeshLibrary/Floor.tres" id="1_bhsfk"]
-[ext_resource type="MeshLibrary" uid="uid://cnqhboerab5dp" path="res://MeshLibrary/Wall.tres" id="2_jbex8"]
-[ext_resource type="MeshLibrary" uid="uid://h0ggpki4lkb" path="res://MeshLibrary/Decoration.tres" id="3_jbex8"]
-[ext_resource type="PackedScene" uid="uid://ckfmdpdunxfvd" path="res://Scenes/Player.tscn" id="3_ss6lx"]
+[ext_resource type="MeshLibrary" uid="uid://bpypp44wksonj" path="res://MeshLibrary/Floor.tres" id="1_k4rbk"]
+[ext_resource type="MeshLibrary" uid="uid://cnqhboerab5dp" path="res://MeshLibrary/Wall.tres" id="2_t4fbl"]
+[ext_resource type="MeshLibrary" uid="uid://h0ggpki4lkb" path="res://MeshLibrary/Decoration.tres" id="3_p1kj7"]
+[ext_resource type="PackedScene" uid="uid://ckfmdpdunxfvd" path="res://Scenes/Player/Player.tscn" id="4_qresu"]
+[ext_resource type="PackedScene" uid="uid://dj8el8vth182y" path="res://Scenes/Enemy/test_mele_enemy.tscn" id="5_kx1bb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5a7ea"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -33,7 +34,7 @@ shadow_enabled = true
 [node name="Gridmaps" type="Node" parent="." unique_id=198820676]
 
 [node name="Floor" type="GridMap" parent="Gridmaps" unique_id=1230908316]
-mesh_library = ExtResource("1_bhsfk")
+mesh_library = ExtResource("1_k4rbk")
 cell_size = Vector3(2, 1, 2)
 cell_center_y = false
 data = {
@@ -42,7 +43,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Wall" type="GridMap" parent="Gridmaps" unique_id=1249776905]
-mesh_library = ExtResource("2_jbex8")
+mesh_library = ExtResource("2_t4fbl")
 cell_size = Vector3(1, 2, 1)
 cell_center_x = false
 cell_center_y = false
@@ -54,7 +55,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Decoration" type="GridMap" parent="Gridmaps" unique_id=420147261]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
-mesh_library = ExtResource("3_jbex8")
+mesh_library = ExtResource("3_p1kj7")
 cell_size = Vector3(1, 2, 1)
 cell_center_y = false
 data = {
@@ -62,5 +63,8 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Player" parent="." unique_id=1183880688 instance=ExtResource("3_ss6lx")]
+[node name="Player" parent="." unique_id=1183880688 instance=ExtResource("4_qresu")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 5.5, 0.5)
+
+[node name="test_mele_enemy" parent="." unique_id=1643211548 instance=ExtResource("5_kx1bb")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 2.553, 0.54362696, 0.5)
